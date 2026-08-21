@@ -56,6 +56,10 @@
                               (0 font-lock-constant-face))
                              (,(rx (and (group "$") "\"" (zero-or-more nonl) "\""))
                               (1 font-lock-constant-face))
+                             (,(rx (and "%" (one-or-more (or "/" (one-or-more word)))))
+                              (0 font-lock-constant-face))
+                             (,(rx (and (group "%") "\"" (zero-or-more nonl) "\""))
+                              (1 font-lock-constant-face))
                              (,(gdscript-syntax-regex-maker gdscript-keywords)
                               1
                               font-lock-keyword-face)
